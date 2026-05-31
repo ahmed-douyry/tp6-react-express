@@ -1,6 +1,12 @@
 # TP Express — Bonnes pratiques
 
-API REST en **Node.js / Express** connectée à **MySQL**, organisée en couches pour séparer les responsabilités.
+API REST en **Node.js / Express** connectée à **MySQL**, organisée en couches pour séparer les responsabilités. Un frontend **React** permet de gérer les utilisateurs via une interface CRUD.
+
+## Aperçu de l'interface
+
+![Interface CRUD — Gestion des utilisateurs](./screens/image.png)
+
+*Frontend React connecté à l'API Express — formulaire de création/modification et liste des utilisateurs avec actions Modifier / Supprimer.*
 
 ---
 
@@ -20,6 +26,12 @@ Construire une API CRUD sur la ressource `users` en appliquant une architecture 
 ```
 expressbonpratique/
 ├── app.js                  # Point d'entrée, configuration Express
+├── client/                 # Frontend React (Vite)
+│   ├── src/
+│   │   ├── api/users.js    # Appels fetch vers l'API
+│   │   ├── App.jsx         # Interface CRUD
+│   │   └── main.jsx
+│   └── package.json
 ├── config/
 │   └── db.js               # Pool de connexion MySQL
 ├── routes/
@@ -28,6 +40,8 @@ expressbonpratique/
 │   └── user.controller.js  # Traitement des requêtes HTTP
 ├── services/
 │   └── user.service.js     # Logique métier + requêtes SQL
+├── screens/
+│   └── image.png           # Capture d'écran de l'interface
 └── package.json
 ```
 
@@ -153,6 +167,24 @@ npm start
 Le serveur démarre sur **http://localhost:4000**.
 
 > Utiliser `npm run dev` plutôt que `nodemon app.js` directement : nodemon est installé localement dans le projet.
+
+### Frontend React
+
+Dans un **second terminal** :
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+L'interface est accessible sur **http://localhost:5173**.
+
+Le frontend consomme l'API Express via `fetch` et permet de :
+- lister les utilisateurs
+- créer un utilisateur
+- modifier un utilisateur
+- supprimer un utilisateur
 
 ---
 
