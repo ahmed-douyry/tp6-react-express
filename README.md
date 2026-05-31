@@ -4,9 +4,27 @@ API REST en **Node.js / Express** connectée à **MySQL**, organisée en couches
 
 ## Aperçu de l'interface
 
-![Interface CRUD — Gestion des utilisateurs](screens/image.png)
+Application React accessible sur **http://localhost:5173**, connectée à l'API Express sur **http://localhost:4000**.
 
-*Frontend React connecté à l'API Express — formulaire de création/modification et liste des utilisateurs avec actions Modifier / Supprimer.*
+### Vue principale — liste et création
+
+![Vue principale — liste des utilisateurs et formulaire de création](https://cdn.jsdelivr.net/gh/ahmed-douyry/tp6-nodejs@main/screens/image.png)
+
+*Affichage de la liste (Read) et formulaire pour ajouter un utilisateur (Create).*
+
+### Modification d'un utilisateur
+
+![Mode modification — formulaire pré-rempli](https://cdn.jsdelivr.net/gh/ahmed-douyry/tp6-nodejs@main/screens/modification.png)
+
+*Clic sur « Modifier » : le formulaire passe en mode édition avec les données pré-remplies (Update).*
+
+### Confirmation de suppression
+
+![Confirmation avant suppression](https://cdn.jsdelivr.net/gh/ahmed-douyry/tp6-nodejs@main/screens/confirmation-suppression.png)
+
+*Clic sur « Supprimer » : une boîte de dialogue demande confirmation avant la suppression (Delete).*
+
+> Les captures sont servies via [jsDelivr CDN](https://www.jsdelivr.com/) depuis le dépôt GitHub, afin qu'elles s'affichent même hors clone du projet ou avec filtrage réseau.
 
 ---
 
@@ -41,7 +59,9 @@ expressbonpratique/
 ├── services/
 │   └── user.service.js     # Logique métier + requêtes SQL
 ├── screens/
-│   └── image.png           # Capture d'écran de l'interface
+│   ├── image.png                    # Vue principale (liste + création)
+│   ├── modification.png             # Mode modification
+│   └── confirmation-suppression.png # Confirmation avant delete
 └── package.json
 ```
 
@@ -181,10 +201,13 @@ npm run dev
 L'interface est accessible sur **http://localhost:5173**.
 
 Le frontend consomme l'API Express via `fetch` et permet de :
-- lister les utilisateurs
-- créer un utilisateur
-- modifier un utilisateur
-- supprimer un utilisateur
+
+| Action | Interface | Capture |
+|--------|-----------|---------|
+| **Read** — lister | Tableau « Liste des utilisateurs » | [image.png](https://cdn.jsdelivr.net/gh/ahmed-douyry/tp6-nodejs@main/screens/image.png) |
+| **Create** — créer | Formulaire « Ajouter un utilisateur » | [image.png](https://cdn.jsdelivr.net/gh/ahmed-douyry/tp6-nodejs@main/screens/image.png) |
+| **Update** — modifier | Formulaire « Modifier un utilisateur » | [modification.png](https://cdn.jsdelivr.net/gh/ahmed-douyry/tp6-nodejs@main/screens/modification.png) |
+| **Delete** — supprimer | Dialogue de confirmation | [confirmation-suppression.png](https://cdn.jsdelivr.net/gh/ahmed-douyry/tp6-nodejs@main/screens/confirmation-suppression.png) |
 
 ---
 
