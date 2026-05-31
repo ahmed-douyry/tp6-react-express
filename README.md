@@ -4,7 +4,7 @@ API REST en **Node.js / Express** connectée à **MySQL**, organisée en couches
 
 ## Aperçu de l'interface
 
-![Interface CRUD — Gestion des utilisateurs](./screens/image.png)
+![Interface CRUD — Gestion des utilisateurs](screens/image.png)
 
 *Frontend React connecté à l'API Express — formulaire de création/modification et liste des utilisateurs avec actions Modifier / Supprimer.*
 
